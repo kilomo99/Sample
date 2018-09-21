@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AddressBook {
 	
-	private List<BuddyInfo> sample;
+	private ArrayList<BuddyInfo> sample;
 
 	public AddressBook()
 	{
