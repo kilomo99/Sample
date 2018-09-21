@@ -1,37 +1,42 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddressBook {
 	
-	private static ArrayList<BuddyInfo> phoneBook = new ArrayList<BuddyInfo>();
-	private int currentSize = phoneBook.size();
+	private List<BuddyInfo> sample;
 
-	public static void main(String[] args) {
-	
-		System.out.println("Address Book");
-		BuddyInfo bud = new BuddyInfo("phil","address1","phone#");
-		AddBuddy(bud);
-		System.out.println(phoneBook);
-		RemoveBuddy(0);
-		System.out.println(phoneBook);
-
+	public AddressBook()
+	{
+		this.sample = new ArrayList<BuddyInfo>();
 	}
 	
-	public static void AddBuddy(BuddyInfo buddy)
+	public void addBuddy(BuddyInfo buddy)
 	{
 		if(buddy != null)
 		{
-			phoneBook.add(buddy);
+			this.sample.add(buddy);
 		}
 	}
 	
-	public static void RemoveBuddy(int index)
+	public void removeBuddy(int index)
 	{
-		if(index >= 0 && phoneBook.size() >= index)
+		if(index >= 0 && this.sample.size() > index)
 		{
-			phoneBook.remove(index);
+			this.sample.remove(index);
 		}
 	}
+	
+	
+	public static void main(String[] args) 
+	{
+		BuddyInfo bud = new BuddyInfo("phil","address1","phone#");
+		AddressBook addressBook = new AddressBook();
+		addressBook.addBuddy(bud);
+		addressBook.removeBuddy(0);
+
+	}
+	
 
 }
