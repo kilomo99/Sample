@@ -1,4 +1,4 @@
-# Sample
+# Samples
 tesst
 user
 Load balannce
